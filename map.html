@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="contact-in">
+    <div class="contact-map"> 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109740.86931225298!2d76.68112697759604!3d30.73520297797146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed0be66ec96b%3A0xa5ff67f9527319fe!2sChandigarh!5e0!3m2!1sen!2sin!4v1681630307069!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+    </div>
+    <div class="contact-form">
+    <h1>Contact Us</h1>
+    <form onsubmit="sendEmail(); reset(); return false;">
+        <input type="text" id="name" placeholder="Name" class="contact-form-txt" />
+        <input type="email" id="email" placeholder="Contact Number" class="contact-form-txt" />
+        <textarea placeholder="Ask your queries" id="message" class="contact-form-textarea"></textarea>
+        <input type="submit" name="Submit" class="contact-form-btn"/>
+
+    </form>
+</div>
+</div>
+
+
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+<script>
+        function sendEmail(){
+    Email.send({
+    SecureToken: "ad88a8c8-7554-4afb-9c6e-1a7d7c44b9af ",
+    To : 'ankitranaa2003@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "New contact form enquiry",
+    Body : "Name: " + document.getElementById("name").value
+    + "<br> Email: " + document.getElementById("email").value
+    + "<br> Message: " +document.getElementById("message").value
+}).then(
+  message => alert("Message sent")
+);
+    }
+
+
+</script>
+
+</body>
+</html>
